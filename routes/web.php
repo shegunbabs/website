@@ -15,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'samples.sample2');
 
+Route::get('is-test', function (){
+    dd(
+        request()->host(),
+        request()->httpHost(),
+        request()->schemeAndHttpHost()
+    );
+});
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
