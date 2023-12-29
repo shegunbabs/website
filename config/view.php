@@ -14,6 +14,7 @@ return [
     */
 
     'paths' => [
+        base_path("src/UI"),
         resource_path('views'),
     ],
 

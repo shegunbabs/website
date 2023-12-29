@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'samples.sample2');
+Volt::route('/', 'website.index')->name('website.index');
+Volt::route('/work', 'website.work')->name('website.work');
+Volt::route('/notes', 'website.blog-list')->name('website.blog-list');
+Volt::route('/note/{slug}', 'website.blog-single')->name('website.blog-single');
+
+#Route::view('/', 'samples.sample2');
 
 Route::get('is-test', function (){
     dd(
